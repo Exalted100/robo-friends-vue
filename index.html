@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vue Robo-friends App</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tachyons/4.11.1/tachyons.min.css">
+    <link rel="stylesheet" href="./index.css">
+</head>
+<body>
+    <div class="tc">
+        <h1>RoboFriends</h1>
+
+        <div id="search-robots">
+            <div class="pa2">
+                <input type="search" class="pa3 ba b--green bg-lightest-blue" name="search robots" v-model="search" v-on:change="filterRobots">
+            </div>
+
+            <robot-friend v-for="robot in robots" v-bind:robot="robot" v-bind:key="robot.id" ></robot-friend>
+        </div>
+    </div>
+
+    <script src="https://unpkg.com/vue@next"></script>
+    <script src="./index.js"></script>
+
+</body>
+</html>
